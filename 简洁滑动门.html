@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+body,ul,li{margin: 0;padding: 0;font: 12px normal "宋体", Arial, Helvetica, sans-serif;list-style: none;}
+a{text-decoration: none;color: #000;font-size: 14px;}
+
+#tabbox{ width:600px; overflow:hidden; margin:0 auto;}
+.tab_conbox{border: 1px solid #999;border-top: none;}
+.tab_con{ display:none;}
+
+.tabs{height: 32px;border-bottom:1px solid #999;border-left: 1px solid #999;width: 100%;}
+.tabs li{height:31px;line-height:31px;float:left;border:1px solid #999;border-left:none;margin-bottom: -1px;background: #e0e0e0;overflow: hidden;position: relative;}
+.tabs li a {display: block;padding: 0 20px;border: 1px solid #fff;outline: none;}
+.tabs li a:hover {background: #ccc;}	
+.tabs .thistab,.tabs .thistab a:hover{background: #fff;border-bottom: 1px solid #fff;}
+
+.tab_con {padding:12px;font-size: 14px; line-height:175%;}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	jQuery.jqtab = function(tabtit,tab_conbox,shijian) {
+		$(tab_conbox).find("li").hide();
+		$(tabtit).find("li:first").addClass("thistab").show(); 
+		$(tab_conbox).find("li:first").show();
+	
+		$(tabtit).find("li").bind(shijian,function(){
+		  $(this).addClass("thistab").siblings("li").removeClass("thistab"); 
+			var activeindex = $(tabtit).find("li").index(this);
+			$(tab_conbox).children().eq(activeindex).show().siblings().hide();
+			return false;
+		});
+	
+	};
+	/*调用方法如下：*/
+	$.jqtab("#tabs","#tab_conbox","click");
+	
+	$.jqtab("#tabs2","#tab_conbox2","mouseenter");
+	
+});
+</script>
+</head>
+<body>
+
+<div id="tabbox">
+    <ul class="tabs" id="tabs2">
+       <li><a href="http://www.51xuediannao.com/js/nav/">导航菜单</a></li>
+       <li><a href="http://www.51xuediannao.com/js/slide/">焦点幻灯片</a></li>
+       <li><a href="http://www.51xuediannao.com/js/gg/">广告代码</a></li>
+      <li><a href="http://www.51xuediannao.com/js/texiao/">网页特效</a></li>
+    </ul>
+    <ul class="tab_conbox" id="tab_conbox2">
+     <li class="tab_con">
+           <p>1</p>
+        </li>
+            
+        <li class="tab_con">
+        	<p>2</p>
+        </li>
+    
+        <li class="tab_con">
+        	<p>3</p>
+        </li>
+    
+        <li class="tab_con">
+        	<p>4</p>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

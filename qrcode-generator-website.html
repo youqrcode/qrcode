@@ -1,0 +1,403 @@
+<html itemscope="" itemtype="http://schema.org/Product" class="notouchdev">
+<head>
+<script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.zh_CN.W_CTiQjq2GM.O/m=auth/exm=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AItRSTM2HsQRsRX-hfuHlAZ9Hm4XHzZVdQ/cb=gapi.loaded_1" async></script><script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.zh_CN.W_CTiQjq2GM.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AItRSTM2HsQRsRX-hfuHlAZ9Hm4XHzZVdQ/cb=gapi.loaded_0" async></script><script type="text/javascript" src="//s7.addthis.com/static/r07/auth016.js"></script>
+<link rel="stylesheet" type="text/css" href="//s7.addthis.com/static/r07/widget118.css" media="all">
+<meta charset="utf-8">
+<base href="/">
+<title>QR Code Generator</title>
+<meta name="description" lang="en" content="Free Online QR Code Generator to make your own QR Codes.
+              Supports Dynamic Codes, Tracking, Analytics, Free text, vCards and more.">
+<link rel="stylesheet" href="styles/6bf3ced6.generator.css">
+<link rel="shortcut icon" type="image/x-icon" href="images/icon.png">
+<link href="http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+<meta property="og:title" content="The QR Code Generator">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://www.the-qrcode-generator.com/">
+<meta property="og:image" content="http://chart.apis.google.com/chart?chs=300x300&amp;cht=qr&amp;chld=|0&amp;chl=http%3A%2F%2Fwww.the-qrcode-generator.com%2F">
+<meta property="og:site_name" content="The QR Code Generator">
+<meta property="fb:admins" content="100002536485956">
+<meta itemprop="name" content="QR Code Generator">
+<meta itemprop="description" content="Generates QR Codes from URLs, free text, vCards, SMS or Phone Numbers.">
+<meta itemprop="image" content="http://www.the-qrcode-generator.com/images/icon.png">
+
+<!--[if lte IE 8]>
+    <script type="text/javascript">
+        window.location = '/oldie.html';
+    </script>
+    <![endif]-->
+<style type="text/css">
+@charset "UTF-8";
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none;
+}
+ng\:form {
+	display: block;
+}
+</style>
+</head>
+<body data-ng-app="qrApp" role="application" class="ng-scope">
+<div class="navbar navbar-static-top ng-scope" data-ng-controller="NavbarCtrl">
+  <div class="navbar-inner">
+    <div class="fullcontainer"> <a class="brand" href="/">
+      <h1>QR Code Generator</h1>
+      </a>
+      <div data-ng-include="'views/userMenu.html'" data-ng-show="auth.isSignedIn" style="display: none; ">
+        <div class="dropdown pull-left user-menu ng-scope"> <a href="" class="dropdown-toggle"> <i class="glyphicon-user"></i><i class="caret"></i> </a>
+          <ul class="dropdown-menu">
+            <li class="ng-binding"></li>
+            <li class="divider"></li>
+            <li><a href="" data-ng-click="auth.signOut()">Sign Out</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="nav">
+        <li data-ng-show="!auth.isSignedIn" style=""> <a href="" data-ng-click="auth.signIn()">Sign In</a> </li>
+        <li data-ng-show="auth.isSignedIn" data-help-tour-highlight="mycodes" data-qr-route-link="" style="display: none; " class=""><a href="/mycodes">My Codes</a></li>
+        <li data-qr-route-link="" class="active"><a href="/">Generate</a></li>
+        <li data-ng-show="scanSupported" data-qr-route-link="" style="" class=""><a href="/scan">Scan</a></li>
+      </ul>
+      <ul class="nav pull-right">
+        <li data-qr-route-link="" class=""><a href="/whats-a-qr-code">What's a QR
+          Code?</a></li>
+        <li><a href="http://pdfmerge.w69b.com">PDF Mergy</a></li>
+        <li><a href="http://www.sndlatr.com">SndLatr</a></li>
+        <li data-qr-route-link="" class=""><a href="/impressum">Imprint</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="fullcontainer">
+  <div class="container">
+    <div data-ng-view="" class="view">
+      <div class="view-generate ng-scope">
+        <div class="spinner-overlay" data-ng-show="loading" style="display: none; "></div>
+        <div class="generate-widget" data-qr-generate-widget="" data-qrcode="qrcode">
+          <div class="row">
+            <div class="nav-section-header">Type</div>
+            <div class="qr-generate-inputs ng-isolate-scope ng-scope" data-qr-tabbed-inputs="" data-model="qrcode">
+              <div class="tabs-left qr-inputs tabbable ng-isolate-scope ng-scope" data-tabset="" data-qr-selected-pane="model.type" data-help-tour-highlight="qr-inputs">
+                <ul class="nav nav-tabs" ng-transclude="">
+                  <li ng-class="{active: active, disabled: disabled}" class="form-simple ng-scope" data-tab="" data-qr-pane-name="txt" data-heading="Free Text"> <a ng-click="select()" tab-heading-transclude="" class="ng-binding">Free Text</a> </li>
+                  <li ng-class="{active: active, disabled: disabled}" class="form-simple ng-scope" data-tab="" data-qr-pane-name="url" data-heading="URL"> <a ng-click="select()" tab-heading-transclude="" class="ng-binding">URL</a> </li>
+                  <li ng-class="{active: active, disabled: disabled}" data-tab="" data-qr-pane-name="contact" data-heading="Contact" class="ng-scope"> <a ng-click="select()" tab-heading-transclude="" class="ng-binding">Contact</a> </li>
+                  <li ng-class="{active: active, disabled: disabled}" data-tab="" class="form-simple ng-scope active" data-heading="Phone Number" data-qr-pane-name="phone"> <a ng-click="select()" tab-heading-transclude="" class="ng-binding">Phone Number</a> </li>
+                  <li ng-class="{active: active, disabled: disabled}" data-tab="" data-qr-pane-name="sms" data-heading="SMS" class="ng-scope"> <a ng-click="select()" tab-heading-transclude="" class="ng-binding">SMS</a> </li>
+                </ul>
+                <div class="tab-content"> 
+                  <!-- ngRepeat: tab in tabs -->
+                  <div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab" tt="tab">
+                    <textarea data-qr-focus="true" placeholder="Enter text to share here." autofocus rows="5" class="input-xlarge ng-scope ng-pristine ng-valid" ng-model="data.txt"></textarea>
+                  </div>
+                  <div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab" tt="tab">
+                    <input type="text" class="input-xlarge ng-scope ng-pristine ng-valid" autofocus ng-model="data.url" placeholder="Enter URL">
+                    <button class="btn ng-scope" data-ng-disabled="shortenButtonDisabled" data-ng-show="!model.isDynamic &amp;&amp;                data.url.length &gt; 19 &amp;&amp; shortURLInfo.shortURL != data.url" data-ng-click="shortenURL()" style="display: none; ">Shorten URL </button>
+                    <div class="alert alert-info ng-scope ng-binding" data-ng-show="shortURLInfo.shortURL &amp;&amp; shortURLInfo.shortURL == data.url" style="display: none; "> The short URL  encoded in the QR Code            redirects to <a data-ng-href="" target="_blank" class="ng-binding"> </a>. </div>
+                  </div>
+                  <div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab" tt="tab">
+                    <div class="form-horizontal ng-scope">
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.name" data-name="Name">
+                        <label class="control-label ng-binding" for="gid-0">Name</label>
+                        <div class="controls">
+                          <input type="text" id="gid-0" ng-model="model" data-qr-focus="" placeholder="Name" class="ng-valid ng-dirty">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.firstname" data-name="First Name">
+                        <label class="control-label ng-binding" for="gid-1">First Name</label>
+                        <div class="controls">
+                          <input type="text" id="gid-1" ng-model="model" data-qr-focus="" placeholder="First Name" class="ng-valid ng-dirty">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.organization" data-name="Organization">
+                        <label class="control-label ng-binding" for="gid-2">Organization</label>
+                        <div class="controls">
+                          <input type="text" id="gid-2" ng-model="model" data-qr-focus="" placeholder="Organization" class="ng-valid ng-dirty">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.email" data-type="email" data-name="Email">
+                        <label class="control-label ng-binding" for="gid-3">Email</label>
+                        <div class="controls">
+                          <input type="text" id="gid-3" ng-model="model" data-qr-focus="" placeholder="Email" class="ng-valid ng-dirty">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.phone" data-type="tel" data-name="Phone">
+                        <label class="control-label ng-binding" for="gid-4">Phone</label>
+                        <div class="controls">
+                          <input type="text" id="gid-4" ng-model="model" data-qr-focus="" placeholder="Phone" class="ng-valid ng-dirty">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.cell" data-type="tel" data-name="Cell Phone">
+                        <label class="control-label ng-binding" for="gid-5">Cell Phone</label>
+                        <div class="controls">
+                          <input type="text" id="gid-5" ng-model="model" data-qr-focus="" placeholder="Cell Phone" class="ng-valid ng-dirty">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.fax" data-type="tel" data-name="Fax">
+                        <label class="control-label ng-binding" for="gid-6">Fax</label>
+                        <div class="controls">
+                          <input type="text" id="gid-6" ng-model="model" data-qr-focus="" placeholder="Fax" class="ng-pristine ng-valid">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.street" data-name="Street">
+                        <label class="control-label ng-binding" for="gid-7">Street</label>
+                        <div class="controls">
+                          <input type="text" id="gid-7" ng-model="model" data-qr-focus="" placeholder="Street" class="ng-pristine ng-valid">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.postcode" data-name="Postcode">
+                        <label class="control-label ng-binding" for="gid-8">Postcode</label>
+                        <div class="controls">
+                          <input type="text" id="gid-8" ng-model="model" data-qr-focus="" placeholder="Postcode" class="ng-pristine ng-valid">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.city" data-name="City">
+                        <label class="control-label ng-binding" for="gid-9">City</label>
+                        <div class="controls">
+                          <input type="text" id="gid-9" ng-model="model" data-qr-focus="" placeholder="City" class="ng-pristine ng-valid">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.region" data-name="Region/State">
+                        <label class="control-label ng-binding" for="gid-10">Region/State</label>
+                        <div class="controls">
+                          <input type="text" id="gid-10" ng-model="model" data-qr-focus="" placeholder="Region/State" class="ng-pristine ng-valid">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.country" data-name="Country">
+                        <label class="control-label ng-binding" for="gid-11">Country</label>
+                        <div class="controls">
+                          <input type="text" id="gid-11" ng-model="model" data-qr-focus="" placeholder="Country" class="ng-pristine ng-valid">
+                        </div>
+                      </div>
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.contact.url" data-type="url" data-name="URL">
+                        <label class="control-label ng-binding" for="gid-12">URL</label>
+                        <div class="controls">
+                          <input type="text" id="gid-12" ng-model="model" data-qr-focus="" placeholder="URL" class="ng-pristine ng-valid">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane ng-scope active" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab" tt="tab">
+                    <input type="tel" ng-model="data.phone" placeholder="Enter Phone Number" class="ng-scope ng-pristine ng-valid">
+                  </div>
+                  <div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab" tt="tab">
+                    <div class="form-horizontal ng-scope">
+                      <div class="control-group" data-qr-horizontal-input="" data-model="data.sms.number" data-type="tel" data-name="Number">
+                        <label class="control-label ng-binding" for="gid-13">Number</label>
+                        <div class="controls">
+                          <input type="text" id="gid-13" ng-model="model" data-qr-focus="" placeholder="Number" class="ng-pristine ng-valid">
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label" for="input-sms-message">Message</label>
+                        <div class="controls">
+                          <textarea id="input-sms-message" placeholder="Enter Message" rows="5" class="input-xlarge ng-pristine ng-valid" ng-model="data.sms.message">                    </textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="qr-generate-result">
+              <h2>QR Code</h2>
+              <div class="btn-toolbar">
+                <div class="btn-group">
+                  <button class="btn btn-primary" data-ng-click="save()">Save </button>
+                  <button class="btn" data-ng-click="share()">Share</button>
+                  <button type="button" class="btn ng-pristine ng-valid" data-ng-model="optionsShown" data-btn-checkbox="" data-btn-checkbox-true="1" data-btn-checkbox-false="0">Options </button>
+                  <button class="btn ng-scope" data-ng-show="$root.isOnline" data-ng-click="printWithZazzle()" data-tooltip="Print with Zazzle" style=""> <i class="icon-print"></i> </button>
+                </div>
+              </div>
+              <div class="qr-options collapse" data-collapse="!optionsShown" style="height: 0px; ">
+                <div class="option option-margin" data-ng-hide="isLegacyBrowser" style="">
+                  <label class="checkbox ng-scope" data-tooltip="QR Code readers require a white                           margin to detect QR Codes. So make sure to print                           it on a light background instead." data-tooltip-placement="left">
+                    <input type="checkbox" data-ng-model="options.margin" data-ng-true-value="0" data-ng-false-value="1" class="ng-pristine ng-valid">
+                    No margin </label>
+                  <div class="alert ng-binding" data-ng-show="options.size != qrCodeSize" style="display: none; "> Size was set to 200px to avoid scaling                        which                        would reduce readability. </div>
+                </div>
+                <div class="option">
+                  <div class="option-legend">Size</div>
+                  <div class="qr-size-chooser" data-qr-size-chooser="" data-size="options.size"> <!-- ngRepeat: size in sizes -->
+                    <button data-ng-repeat="size in sizes" data-btn-radio="50" data-ng-model="$parent.radioSize" data-ng-class="{checked: size == $parent.radioSize}" class="ng-scope ng-pristine ng-valid"> <span class="qr-size-name ng-binding">50px</span> </button>
+                    <button data-ng-repeat="size in sizes" data-btn-radio="100" data-ng-model="$parent.radioSize" data-ng-class="{checked: size == $parent.radioSize}" class="ng-scope ng-pristine ng-valid"> <span class="qr-size-name ng-binding">100px</span> </button>
+                    <button data-ng-repeat="size in sizes" data-btn-radio="200" data-ng-model="$parent.radioSize" data-ng-class="{checked: size == $parent.radioSize}" class="ng-scope ng-pristine ng-valid active checked"> <span class="qr-size-name ng-binding">200px</span> </button>
+                    <button data-ng-repeat="size in sizes" data-btn-radio="300" data-ng-model="$parent.radioSize" data-ng-class="{checked: size == $parent.radioSize}" class="ng-scope ng-pristine ng-valid"> <span class="qr-size-name ng-binding">300px</span> </button>
+                    <div class="qr-size-custom ng-pristine ng-valid" data-btn-radio="'custom'" data-ng-model="radioSize" data-ng-class="{checked: 'custom' == radioSize}">
+                      <label> <span class="qr-size-name">Custom</span> <span class="input-wrapper">
+                        <input type="number" data-qr-autoselect="" data-ng-model="customSize" class="ng-pristine ng-valid ng-valid-number">
+                        px </span> </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <canvas data-ng-hide="hide" class="qr-generated-code" data-qr-code="" data-qr-size="200" data-qr-hide="clampedSize &gt; 200" data-qr-margin="1" data-qr-content="tel:" width="200" height="200" style=""></canvas>
+            </div>
+          </div>
+          <div class="row qr-big-code" data-ng-hide="clampedSize &lt;= 200" style="display: none; ">
+            <div class="alert ng-binding" data-ng-show="showClamped" style="display: none; "> The QR Code is only displayed at a size of 200px            but it            will be saved at a size of 200px. </div>
+            <div class="alert ng-binding" data-ng-show="showClampedLegacy" style="display: none; "> The QR Code is only displayed at a size of 200px.            Upgrade your Browser get support for larger sizes. </div>
+            <canvas data-ng-hide="hide" class="qr-generated-code" data-qr-hide="clampedSize &lt;= 200" data-qr-code="" data-qr-size="200" data-qr-margin="1" data-qr-content="tel:" width="200" height="200" style="display: none; "></canvas>
+          </div>
+        </div>
+        <div class="convert-dynamic" data-ng-show="modified &amp;&amp; isOnline" style=""> Do you need to change the content of the QR Code after it has been printed?        Or do you need statistics? <a href="" data-ng-click="convertToDynamic()"> <span data-ng-show="$root.auth.isSignedIn" style="display: none; ">Convert your Code to a Dynamic QR Code.</span> <span data-ng-hide="$root.auth.isSignedIn" style="">Sign In with Google and convert your Code to a Dynamic QR Code.</span> </a> </div>
+      </div>
+    </div>
+    <noscript>
+    &lt;div class="static-generator ng-cloak"&gt;
+    &lt;div id="help"&gt;&lt;p&gt;
+    Please enable JavaScript to generate QR Codes.
+    Usage: Enter the information you want to encode as QR Code. A QR
+    Code is generated automatically.
+    &lt;/div&gt;
+    &lt;form id="generate-form" action="/" onsubmit="return false;"&gt;
+    
+    &lt;div id="tab_bar" class="goog-tab-bar goog-tab-bar-top"&gt;
+    &lt;div id="tab_text" class="goog-tab goog-tab-selected"&gt;Free
+    Text
+    &lt;/div&gt;
+    &lt;div id="tab_url" class="goog-tab"&gt;URL&lt;/div&gt;
+    &lt;div id="tab_vcard" class="goog-tab"&gt;Contact&lt;/div&gt;
+    &lt;div id="tab_phone" class="goog-tab"&gt;Phone Number&lt;/div&gt;
+    &lt;div id="tab_sms" class="goog-tab"&gt;SMS&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="goog-tab-bar-clear"&gt;&lt;/div&gt;
+    &lt;div id="tab_bar_content" class="goog-tab-content"&gt;
+    &lt;div id="content_text" class="tab-input"&gt;
+    &lt;label for="text"&gt;Free Text:&lt;/label&gt;
+    &lt;textarea id="text" rows="5" cols="30"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div id="content_url" class="tab-input tab-hidden"&gt;
+    &lt;label for="url"&gt;URL:&lt;/label&gt;&lt;input type="text"
+    id="url"/&gt;
+    
+    &lt;div&gt;
+    &lt;label id="shorten_label"&gt;
+    &lt;input type="checkbox" id="shorten_url"/&gt;
+    Shorten Link
+    &lt;/label&gt;
+    &lt;/div&gt;
+    
+    &lt;/div&gt;
+    &lt;div id="content_phone" class="tab-input tab-hidden"&gt;
+    &lt;label for="phone"&gt;Phone Number:&lt;/label&gt;&lt;input
+    type="text"
+    id="phone"/&gt;
+    &lt;/div&gt;
+    &lt;div id="content_sms" class="tab-input tab-hidden"&gt;
+    &lt;div&gt;&lt;label for="sms_number"&gt;Phone Number:&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;input type="text" id="sms_number"/&gt;
+    
+    &lt;div&gt;&lt;label for="sms_text"&gt;Message:&lt;/label&gt;&lt;/div&gt;
+    &lt;textarea id="sms_text" rows="5" cols="30"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div id="content_vcard" class="tab-input tab-hidden"&gt;
+    &lt;div&gt;&lt;label for="vcard_firstname"&gt;First Name:&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;input type="text" id="vcard_firstname"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_name"&gt;Name:&lt;/label&gt;&lt;/div&gt;
+    &lt;input type="text" id="vcard_name"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_org"&gt;Organization:&lt;/label&gt;&lt;/div&gt;
+    &lt;input type="text" id="vcard_org"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_email"&gt;Email:&lt;/label&gt;&lt;/div&gt;
+    &lt;input type="text" id="vcard_email"/&gt;
+    
+    
+    &lt;div&gt;&lt;label for="vcard_cell"&gt;Cell Phone Number:&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;input type="text" id="vcard_cell"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_phone"&gt;Phone Number:&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;input type="text" id="vcard_phone"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_fax"&gt;Fax Number:&lt;/label&gt;&lt;/div&gt;
+    &lt;input type="text" id="vcard_fax"/&gt;
+    
+    
+    &lt;div&gt;&lt;label for="vcard_street"&gt;Street:&lt;/label&gt;&lt;/div&gt;
+    &lt;input type="text" id="vcard_street"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_postcode"&gt;Postcode:&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;input type="text" id="vcard_postcode"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_city"&gt;City:&lt;/label&gt;&lt;/div&gt;
+    &lt;input type="text" id="vcard_city"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_region"&gt;Region/State:&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;input type="text" id="vcard_region"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_country"&gt;Country:&lt;/label&gt;&lt;/div&gt;
+    &lt;input type="text" id="vcard_country"/&gt;
+    
+    &lt;div&gt;&lt;label for="vcard_url"&gt;URL:&lt;/label&gt;&lt;/div&gt;
+    &lt;input type="text" id="vcard_url"/&gt;
+    
+    &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+    &lt;button id="btn_submit" type="submit"&gt;Generate&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="clear"&gt;&lt;/div&gt;
+    
+    &lt;div id="output_tools"&gt;&lt;/div&gt;
+    &lt;/form&gt;
+    &lt;div id="qrcode_output"&gt;
+    &lt;h2&gt;QR Code:&lt;/h2&gt;
+    
+    &lt;div id="img_container"&gt;
+    &lt;img src="http://chart.apis.google.com/chart?chs=200x200&amp;amp;cht=qr&amp;amp;chld=|1&amp;amp;chl=http%3A%2F%2Fwww.the-qrcode-generator.com%2F" alt="qrcode" /&gt;
+    &lt;/div&gt;
+    &lt;div id="dl_container"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+    </noscript>
+    <div class="visuallead" data-ng-show="isOnline" data-visuallead="" data-url="http://www.visualead.com/app/webroot/pages_ads/generic-iframe/" style="">
+      <iframe id="visual_qr" src="http://www.visualead.com/app/webroot/pages_ads/generic-iframe/" seamless scrolling="no"></iframe>
+    </div>
+    <div class="social-buttons" data-ng-show="isOnline" style="">
+      <div id="gplus-root">
+        <div style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 300px; height: 24px; background-position: initial initial; background-repeat: initial initial; " id="___plusone_0">
+          <iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px; " tabindex="0" vspace="0" width="100%" id="I0_1384831393843" name="I0_1384831393843" src="https://apis.google.com/_/+1/fastbutton?usegapi=1&amp;bsv=o&amp;annotation=inline&amp;width=300&amp;origin=http%3A%2F%2Fwww.the-qrcode-generator.com&amp;url=http%3A%2F%2Fwww.the-qrcode-generator.com%2F&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.zh_CN.W_CTiQjq2GM.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAItRSTM2HsQRsRX-hfuHlAZ9Hm4XHzZVdQ#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1384831393843&amp;parent=http%3A%2F%2Fwww.the-qrcode-generator.com&amp;pfname=&amp;rpctoken=35125343" data-gapiattached="true" title="+1"></iframe>
+        </div>
+      </div>
+      <div id="fb-root"></div>
+      <div class="fb-like" data-href="http://the-qrcode-generator.com" data-send="true" data-width="450" data-show-faces="false"></div>
+      
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style "> <a href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4dff750f2b135268" class="addthis_button_compact at300m"><span class="at16nc at300bs at15nc at15t_compact at16t_compact"><span class="at_a11y">More Sharing Services</span></span>Share</a>
+        <div class="atclear"></div>
+      </div>
+      <!-- AddThis Button END --> 
+      
+    </div>
+  </div>
+  <div class="sidebar"> 
+    <script type="text/javascript" async src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dff750f2b135268"></script><script type="text/javascript" async src="//connect.facebook.net/en_GB/all.js#xfbml=1"></script><script type="text/javascript" async src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script><script type="text/javascript" async src="http://www.google-analytics.com/ga.js"></script><script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+    <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-9877465651415243" data-ad-slot="1007783630" data-adsbygoogle-status="done"><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent">
+    <iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe>
+    </ins></ins></ins> 
+    <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script> 
+  </div>
+</div>
+<script src="scripts/fa5ba54b.libs.js"></script> 
+<script src="scripts/71e842bc.fullapp.js"></script>
+<div class="w69b-statusbar ng-scope" data-ng-class="additionalClasses" data-ng-show="shown" style="display: none; ">
+  <div class="w69b-statusbar-content">
+    <button type="button" data-ng-show="closeable" class="close" data-ng-click="close()" style="">×</button>
+    <span class="w69b-statusbar-text ng-binding" data-ng-bind-html="message"></span></div>
+</div>
+<div style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000; " id="_atssh">
+  <iframe id="_atssh451" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px; left: 0px; top: 0px; " src="//s7.addthis.com/static/r07/sh142.html#iit=1384831372975&amp;tmr=load%3D1384831372721%26core%3D1384831372878%26main%3D1384831372970%26ifr%3D1384831372979&amp;cb=0&amp;cdn=0&amp;chr=UTF-8&amp;kw=&amp;ab=-&amp;dh=www.the-qrcode-generator.com&amp;dr=http%3A%2F%2Fwww.baidu.com%2Fs%3Fwd%3Dqrcode%26rsv_bp%3D0%26ch%3D%26tn%3Dbaidu%26bar%3D%26rsv_spt%3D3%26ie%3Dutf-8%26rsv_sug3%3D5%26rsv_sug%3D0%26rsv_sug1%3D5%26rsv_sug4%3D104%26inputT%3D1142&amp;du=http%3A%2F%2Fwww.the-qrcode-generator.com%2F&amp;dt=QR%20Code%20Generator&amp;dbg=0&amp;md=0&amp;cap=tc%3D0%26ab%3D0&amp;inst=1&amp;vcl=0&amp;jsl=32&amp;prod=undefined&amp;lng=zh-CN&amp;ogt=site_name%2Cimage%2Curl%2Ctype%3Dwebsite%2Ctitle&amp;pc=men&amp;pub=ra-4dff750f2b135268&amp;ssl=0&amp;sid=528ad98ce823b915&amp;srpl=1&amp;srcs=1&amp;srd=1&amp;srf=1&amp;srx=1&amp;ver=300&amp;xck=0&amp;xtr=0&amp;og=title%3DThe%2520QR%2520Code%2520Generator%26type%3Dwebsite%26url%3Dhttp%253A%252F%252Fwww.the-qrcode-generator.com%252F%26image%3Dhttp%253A%252F%252Fchart.apis.google.com%252Fchart%253Fchs%253D300x300%2526cht%253Dqr%2526chld%253D%257C0%2526chl%253Dhttp%25253A%25252F%25252Fwww.the-qrcode-generator.com%25252F%26site_name%3DThe%2520QR%2520Code%2520Generator&amp;aa=0&amp;rev=124737&amp;ct=1&amp;xld=1&amp;xd=1"></iframe>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/static/r07/core109.js"></script>
+<iframe name="oauth2relay830078108" id="oauth2relay830078108" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=http%3A%2F%2Fwww.the-qrcode-generator.com#rpctoken=846775574&amp;forcesecure=1" style="width: 1px; height: 1px; position: absolute; top: -100px; "></iframe>
+</body>
+</html>

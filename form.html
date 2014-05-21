@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<meta content="text/css" http-equiv="Content-Style-Type" />
+<meta content="text/javascript" http-equiv="Content-Script-Type" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="./css/common.css " />
+<link rel="stylesheet" href="css/header.css" type="text/css">
+<link rel="stylesheet" href="/resources/demos/style.css" />
+<link href="css/button.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<title>QRcode</title>
+<link type="image/vnd.microsoft.icon" href="./img/favorite.png"	rel="shortcut icon" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+	$(function() {
+		$("#vcards").tabs();
+	});
+</script>
+</head>
+<body>
+<center>
+<div id="header">
+  <div id="headerContents">
+    <div id="headerLogo" class="hideText">
+      <p></p>
+    </div>
+    <ul id="headerListStyle">
+      <li class="headerList"><a href="form.html">生成QR码</a></li>
+      <li class="headerList"><a href="decode.html">解析QR码</a></li>
+      <li class="headerList"><a href="encrypted_decode.html">解析加密QR码</a></li>
+      <li class="headerList"><a href="index.html">关于我们</a></li>
+      <li class="headerList"><a href="">常见问题解答</a></li>
+    </ul>
+  </div>
+</div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<center>
+  <h3>Please enter the unencrypted and encrypted codes in the following form</h3>
+</center>
+-->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>
+<form name="myform" action="encode.php" method="post">
+  </p>
+  <p>&nbsp;</p>
+  <p></p>
+  <div align="center">
+    <table width="382" border="0" align="center">
+      <tr align="left">
+        <th width="240" height="67" align="center"><label>Your text
+            <input type="text" name="unencrypted_code" />
+        </label></th>
+
+        <td width="132" align="left"><input type="submit" width="100" height="100" name="submit" class="myButton"
+					value="生成QR码" align="texttop"/></td>
+      </tr>
+
+    </table>
+    <p>
+      <center>
+    </p>
+    <p>&nbsp;</p>
+  </div>
+  </center>
+
+
+</form>
+</body>
+</html>
