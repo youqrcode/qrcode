@@ -1,0 +1,78 @@
+html {
+	margin: 0px; padding: 0px;
+}
+body {
+	margin: 0px; padding: 0px;
+}
+ul {
+	margin: 0px; padding: 0px;
+}
+li {
+	margin: 0px; padding: 0px;
+}
+h1 {
+	margin: 0px; padding: 0px;
+}
+h2 {
+	margin: 0px; padding: 0px;
+}
+h3 {
+	margin: 0px; padding: 0px;
+}
+h4 {
+	margin: 0px; padding: 0px;
+}
+h5 {
+	margin: 0px; padding: 0px;
+}
+h6 {
+	margin: 0px; padding: 0px;
+}
+fieldset {
+	margin: 0px; padding: 0px;
+}
+legend {
+	margin: 0px; padding: 0px;
+}
+ul {
+	text-transform: capitalize; list-style-type: none;
+}
+li {
+	text-transform: capitalize; list-style-type: none;
+}
+.clear {
+	clear: both;
+}
+#menu {
+	width: 720px; height: 27px; line-height: 27px; overflow: hidden;
+}
+#nav {
+	margin: 0px; width: 720px; height: 27px; line-height: 27px; overflow: hidden; font-family: "Î¢ÈíÑÅºÚ"; font-size: 14px; font-weight: bold; display: block;
+}
+#nav .mainlevel {
+	background: url("../images/d2.jpg") repeat-x 0px 0px; width: 90px; color: rgb(202, 178, 114); float: left;
+}
+#nav .mainlevel a {
+	padding: 0px; width: 90px; text-align: center; color: rgb(202, 178, 114); line-height: 27px; text-decoration: none; display: block;
+}
+#nav .mainlevel a:hover {
+	color: rgb(255, 255, 255); line-height: 27px; text-decoration: none; background-color: rgb(202, 178, 114);
+}
+#nav .mainlevel1 {
+	background: url("../images/d1.jpg") repeat-x 0px 0px; margin: 0px; padding: 0px; width: 90px; color: rgb(255, 255, 255); overflow: hidden; float: left;
+}
+#nav .mainlevel1 li {
+	list-style: none; height: 25px; line-height: 25px; overflow: hidden;
+}
+#nav .mainlevel1 a {
+	margin: 0px; padding: 0px; width: 90px; height: 25px; text-align: center; color: rgb(255, 255, 255); line-height: 25px; overflow: hidden; font-weight: normal; text-decoration: none; display: block;
+}
+#nav .mainlevel1 a:hover {
+	background: url("../images/d3.jpg") repeat-x 0px 0px; color: rgb(255, 255, 255); line-height: 25px; font-weight: normal; text-decoration: none;
+}
+#nav .mainlevel ul {
+	display: none; position: absolute;
+}
+#nav .mainlevel li {
+	background: url("../images/d1.jpg") repeat-x 0px 0px; width: 90px;
+}

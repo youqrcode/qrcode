@@ -1,0 +1,172 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#containerContents {
+    color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+#aboutIndexH1Title {
+    background-image: url("http://www.qrcode.com/zh/img/aboutIndex/aboutIndexH1Title.png");
+    background-repeat: no-repeat;
+    height: 56px;
+    margin-left: 14px;
+}
+.h1BoxLong p {
+    font-size: 88%;
+    margin-left: 30px;
+}
+#qrcodeMap {
+    clear: both;
+    position: relative;
+    width: 100%;
+}
+.qrcodeCell {
+    background-color: #E7E7E7;
+    border-bottom: 10px solid #FFFFFF;
+    border-right: 10px solid #FFFFFF;
+    display: table-cell;
+    height: 160px;
+    vertical-align: middle;
+    width: 480px;
+}
+.qrcodeCell div {
+    display: table-cell;
+    vertical-align: middle;
+}
+.qrcodeCell a {
+    display: block;
+    height: 100%;
+    position: absolute;
+    text-indent: -9999px;
+    top: 0;
+    width: 480px;
+}
+.qrcodeCell a:hover {
+    background-color: #FFFFFF;
+    opacity: 0.3;
+}
+#qrcodeCell1, #qrcodeCell3 {
+    left: 0;
+}
+#qrcodeCell2, #qrcodeCell4 {
+    left: 481px;
+}
+.qrcodeCell div {
+    display: table-cell;
+    vertical-align: middle;
+}
+.qrcodeCellImage {
+    height: 132px;
+    width: 169px;
+}
+.qrcodeCellImage img {
+    border: 1px solid #000000;
+    margin-left: 12px;
+}
+.qrcodeCellIntroduction {
+    padding: 16px;
+}
+.qrcodeCellTitle {
+    color: #0C4C90;
+    font-size: 125%;
+    font-weight: bold;
+    line-height: 130%;
+    padding: 13px 0;
+}
+.qrcodeCellSentence {
+    font-size: 79%;
+}
+.qrcodeCellSeniorSign {
+    background-color: #0C4C90;
+    color: #FFFFFF;
+    font-size: 80%;
+    padding: 3px 6px;
+}
+#featureArea {
+    background-color: #E7E7E7;
+    border: 10px solid #0C4C90;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    position: relative;
+    width: 98%;
+}
+#featureArea #featureImage {
+    left: 350px;
+    position: absolute;
+    top: -46px;
+}
+#featureArea h3 {
+    margin: 18px 22px;
+}
+.featureMap {
+    margin-left: 6px;
+    position: relative;
+}
+.featureCell {
+    background-color: #E7E7E7;
+    background-image: url("http://www.qrcode.com/zh/img/aboutIndex/featureCellSquare.png");
+    background-position: 9px 7px;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #0C4C90;
+    border-right: 1px solid #0C4C90;
+    display: table-cell;
+    height: 108px;
+    vertical-align: middle;
+    width: 315px;
+}
+.featureCell a {
+    display: block;
+    height: 108px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 0;
+    width: 315px;
+}
+.featureCell a:hover {
+    background-color: #FFFFFF;
+    opacity: 0.3;
+}
+#featureCell1 {
+    left: 0;
+}
+#featureCell2 {
+    left: 319px;
+}
+#featureCell3 {
+    border-right: 0 none;
+    left: 638px;
+}
+#featureCell4 {
+    border-bottom: 0 none;
+    left: 0;
+}
+#featureCell5 {
+    border-bottom: 0 none;
+    left: 319px;
+}
+#featureCell6 {
+    border-bottom: 0 none;
+    border-right: 0 none;
+    left: 638px;
+}
+.featureCell p {
+    display: table-cell;
+    vertical-align: middle;
+}
+.featureCellNo {
+    color: #0C4C90;
+    font-size: 340%;
+    padding-left: 30px;
+}
+.featureCellTitle {
+    font-size: 100%;
+    font-weight: bold;
+    padding-left: 16px;
+}
+.featurePage {
+    width: 920px;
+}

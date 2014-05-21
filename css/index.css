@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#containerContents {
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+.divlink {
+    position: relative;
+}
+.divlink a {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.imgtextlink {
+    text-indent: -9999px;
+}
+#mainLogo {
+    background-image: url("http://www.qrcode.com/zh/img/index/mainLogo.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 370px;
+    text-indent: -9999px;
+    width: 100%;
+}
+#qrcodeButton, #howToButton {
+    float: left;
+    height: 300px;
+    width: 330px;
+}
+#qrcodeButton a, #howToButton a {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    color: #000000;
+    font-size: 75%;
+    height: 110px;
+    padding: 190px 50px 0;
+    width: 230px;
+}
+#qrcodeButton a:hover, #howToButton a:hover {
+    background-position: 0 -300px;
+    text-decoration: none;
+}
+#qrcodeButton a {
+    background-image: url("http://www.qrcode.com/zh/img/index/qrcodeButton.png");
+}
+#howToButton a {
+    background-image: url("http://www.qrcode.com/zh/img/index/howToButton.png");
+}
+#historyButton {
+    float: left;
+    height: 200px;
+    width: 320px;
+}
+#historyButton a {
+    background-image: url("http://www.qrcode.com/zh/img/index/historyButton.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+#historyButton a:hover {
+    background-position: 0 -200px;
+}
+#varietyButton {
+    float: left;
+    height: 100px;
+    width: 320px;
+}
+#varietyButton a {
+    background-image: url("http://www.qrcode.com/zh/img/index/varietyButton.png");
+    background-repeat: no-repeat;
+}
+#varietyButton a:hover {
+    background-position: 0 -100px;
+}
+#qrcodeVarietyTitle {
+    background-image: url("http://www.qrcode.com/zh/img/index/qrcodeVarietyTitle.png");
+    background-repeat: no-repeat;
+    float: left;
+    height: 54px;
+    margin-top: 10px;
+    text-indent: -9999px;
+    width: 196px;
+}
+#indexBarListStyle {
+    clear: both;
+    list-style: none outside none;
+    width: 100%;
+}
+#indexBarOrange, #indexBarBlue, #indexBarMazenda {
+    border-left: 1px solid #FFFFFF;
+    color: #000000;
+    float: left;
+    font-size: 11pt;
+    z-index: 0;
+}
+#indexBarOrange {
+    border-left: 0 none;
+}
+#indexBarOrange a, #indexBarBlue a, #indexBarMazenda a {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 1px solid #CCCCCC;
+    color: #000000;
+    display: block;
+    font-weight: bold;
+    height: 40px;
+    padding-left: 50px;
+    padding-top: 22px;
+    width: 273px;
+}
+#indexBarOrange a:hover, #indexBarBlue a:hover, #indexBarMazenda a:hover {
+    background-position: 0 -64px;
+    text-decoration: none;
+}
+#indexBarOrange a {
+    background-image: url("http://www.qrcode.com/zh/img/index/indexBarOrange.png");
+}
+#indexBarBlue a {
+    background-image: url("http://www.qrcode.com/zh/img/index/indexBarBlue.png");
+}
+#indexBarMazenda a {
+    background-image: url("http://www.qrcode.com/zh/img/index/indexBarMazenda.png");
+}
+#indexBarYellow a {
+    background-image: url("http://www.qrcode.com/zh/img/index/indexBarYellow.png");
+}
+#indexBarPurple a {
+    background-image: url("http://www.qrcode.com/zh/img/index/indexBarPurple.png");
+}
+#registerdTrademark {
+    color: #000000;
+    float: right;
+    font-size: 80%;
+    padding: 6px 0 0;
+}

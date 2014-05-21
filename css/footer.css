@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+#footerContents {
+    clear: both;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+#footer a {
+    color: #FFFFFF;
+}
+#footerLeft {
+    background-color: #333333;
+    float: left;
+    height: 110px;
+    margin-top: 30px;
+    width: 650px;
+}
+#footerRight {
+    float: right;
+    height: 110px;
+    margin-top: 30px;
+    width: 320px;
+}
+#copyright {
+    clear: both;
+    margin-bottom: 50px;
+    text-align: center;
+}
+#copyright p {
+    color: #000000;
+    position: relative;
+    top: 20px;
+}
+#footerLeft ul {
+    float: left;
+    list-style: none outside none;
+    padding: 17px 0 0 30px;
+    width: 115px;
+}
+#footerLeft ul li {
+    border-left: 2px solid #777777;
+    padding: 2px 10px;
+}
+#footerRightList {
+    font-size: 120%;
+    list-style: none outside none;
+}
+#footerRightList li {
+}
+#footerRightList li a {
+    background: url("http://www.qrcode.com/zh/img/footer/footerRightListImage.png") no-repeat scroll 20px 11px #333333;
+    display: block;
+    font-size: 90%;
+    margin-bottom: 1px;
+    padding: 7px 0 7px 50px;
+}
+#footerRightList li a:hover {
+    background-color: #222222;
+    text-decoration: none;
+}
+
